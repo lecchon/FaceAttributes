@@ -1,0 +1,7 @@
+{
+    "DenseNet121":["conv3_block12_concat", "conv4_block24_concat", "conv5_block16_concat"],
+    "MobileNetV2":["block_4_depthwise_relu", "block_12_depthwise_relu", "block_16_depthwise_relu"],
+    "VGG16": ["block3_conv3", "block4_conv3", "block5_conv3"],
+    "VGG19": ["block3_conv4", "block4_conv4", "block5_conv4"],
+    "Xception": ["block4_sepconv1_bn", "block8_sepconv2_bn", "block14_sepconv2_bn"]
+}
