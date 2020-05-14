@@ -18,7 +18,7 @@ def ConvBNReLU(x, filters, ksize, strides, padding="same", weight_decay=0.001):
                         padding=padding, use_bias=False, 
                         depthwise_regularizer=l2(weight_decay), pointwise_regularizer=l2(weight_decay))(x)
     x = BatchNormalization()(x)
-    x = ReLU(6)(x)
+    x = ReLU(6.)(x)
     return x
 
 def attention(x, weight_decay=0.001):
@@ -27,7 +27,8 @@ def attention(x, weight_decay=0.001):
                         depthwise_regularizer=l2(weight_decay), pointwise_regularizer=l2(weight_decay))(x)
     q = BatchNormalization()(q)
     q = Activation("sigmoid")(q)
-    x = Multiply()([q,x])
+    q = Multiply()([q,x])
+    x = Add()([q,x])
     return x
 
     
